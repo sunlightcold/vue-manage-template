@@ -40,10 +40,13 @@
           :collapse-transition="false"
           @open="handleOpen"
           @close="handleClose"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
         >
           <el-menu-item index="1">
             <router-link
-              to="/home"
+              to="/index"
               tag="div"
             >
               <i class="el-icon-menu"></i>
@@ -56,9 +59,33 @@
               <span slot="title">嵌套路由</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="2-1">选项1</el-menu-item>
-              <el-menu-item index="2-2">选项2</el-menu-item>
-              <el-menu-item index="2-3">选项3</el-menu-item>
+              <el-menu-item index="2-1">
+                <router-link
+                  to="/index/table"
+                  tag="div"
+                >
+                  <i class="el-icon-setting"></i>
+                  <span>选项1</span>
+                </router-link>
+              </el-menu-item>
+              <el-menu-item index="2-2">
+                <router-link
+                  to="/index/table"
+                  tag="div"
+                >
+                  <i class="el-icon-setting"></i>
+                  <span>选项2</span>
+                </router-link>
+              </el-menu-item>
+              <el-menu-item index="2-3">
+                <router-link
+                  to="/index/table"
+                  tag="div"
+                >
+                  <i class="el-icon-setting"></i>
+                  <span>选项3</span>
+                </router-link>
+              </el-menu-item>
             </el-menu-item-group>
             <el-submenu index="2-4">
               <span slot="title">选项4</span>
@@ -74,7 +101,7 @@
           </el-menu-item>
           <el-menu-item index="4">
             <router-link
-              to="/home/table"
+              to="/index/table"
               tag="div"
             >
               <i class="el-icon-setting"></i>
@@ -95,8 +122,8 @@
 </template>
 
 <script>
-import topBreadcrumb from '@/components/Breadcrumb/topBreadcrumb'
-import floatBreadcrumb from '@/components/Breadcrumb/floatBreadcrumb'
+import topBreadcrumb from '@/components/breadcrumb/topBreadcrumb'
+import floatBreadcrumb from '@/components/breadcrumb/floatBreadcrumb'
 
 export default {
   components: {

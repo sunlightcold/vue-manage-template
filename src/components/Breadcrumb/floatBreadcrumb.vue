@@ -27,7 +27,7 @@
 export default {
   data() {
     return {
-      tags: [{ name: '首页', type: 'success', path: '/home' }]
+      tags: [{ name: '首页', type: 'success', path: '/index' }]
     }
   },
   methods: {
