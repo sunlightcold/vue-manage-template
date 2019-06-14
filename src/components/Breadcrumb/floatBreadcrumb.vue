@@ -24,28 +24,28 @@
 </template>
 
 <script>
+import { constants } from 'zlib';
 export default {
   data() {
     return {
-      tags: [{ name: '首页', type: 'success', path: '/index' }]
+      tags: [{ name: '首页', type: 'success', path: '/index/home' }]
     }
   },
   methods: {
     getBreadcrumb() {
       let matched = this.$route.matched.filter(item => item.name)
       let curRouter = matched.pop()
-
       if (!this.tags.some(item => {
-        return item.path === curRouter.path
+        return item.name === curRouter.meta.floatTitle
       })) {
         this.tags.push({
-          name: curRouter.meta.title,
+          name: curRouter.meta.floatTitle,
           type: 'success',
           path: curRouter.path
         })
       }
       this.tags = this.tags.map(item => {
-        item.path === curRouter.path ? item.type = 'success' : item.type = 'info'
+        item.name === curRouter.meta.floatTitle ? item.type = 'success' : item.type = 'info'
         return item
       })
     },

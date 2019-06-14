@@ -46,7 +46,7 @@
         >
           <el-menu-item index="1">
             <router-link
-              to="/index"
+              to="/index/home"
               tag="div"
             >
               <i class="el-icon-menu"></i>

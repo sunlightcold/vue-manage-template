@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/theme/index.vue'
+import Theme from './views/theme/index.vue'
 
 Vue.use(Router)
 
@@ -13,44 +13,50 @@ export default new Router({
     },
     {
       path: '/index',
-      name: 'index',
-      component: Home,
-      meta: {title: '首页'},
+      name: 'home',
+      component: Theme,
+      meta: {title: '首页', floatTitle: '首页'},
       children: [
+        {
+          path: '/index/home',
+          // name: 'home',
+          meta: {title: '首页'},
+          component: () => import('./views/home/home.vue')
+        },
         {
           path: '/index/table',
           name: 'table',
-          meta: {title: 'Table'},
+          meta: {title: 'Table', floatTitle: 'Table'},
           component: () => import('./views/table/table.vue')
         },
         {
           path: '/nested/menu1',
           name: 'menu1',
-          meta: {title: '菜单1'},
+          meta: {title: '嵌套路由 > 菜单1' , floatTitle: '菜单1'},
           component: () => import('./views/nested/menu1/menu1.vue')
         },
         {
           path: '/nested/menu2',
           name: 'menu2',
-          meta: {title: '菜单2'},
+          meta: {title: '嵌套路由 > 菜单2', floatTitle: '菜单2'},
           component: () => import('./views/nested/menu2/menu2.vue')
         },
         {
           path: '/nested/menu3',
           name: 'menu3',
-          meta: {title: '菜单3'},
+          meta: {title: '嵌套路由 > 菜单3', floatTitle: '菜单3'},
           component: () => import('./views/nested/menu3/menu3.vue')
         },
         {
           path: '/nested/menu4/menu4-1',
           name: 'menu4-1',
-          meta: {title: '菜单4-1'},
+          meta: {title: '嵌套路由 > 菜单4 > 菜单4-1', floatTitle: '菜单4-1'},
           component: () => import('./views/nested/menu4/menu4-1/menu4-1.vue')
         },
         {
           path: '/nested/menu4/menu4-2',
           name: 'menu4-2',
-          meta: {title: '菜单4-2'},
+          meta: {title: '嵌套路由 > 菜单4 > 菜单4-2', floatTitle: '菜单4-2'},
           component: () => import('./views/nested/menu4/menu4-2/menu4-2.vue')
         }
       ]

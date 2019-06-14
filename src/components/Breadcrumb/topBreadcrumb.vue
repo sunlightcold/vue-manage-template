@@ -2,7 +2,7 @@
   <!-- 面包屑 -->
   <el-breadcrumb class="app-breadcrumb" separator-class="el-icon-arrow-right">
     <el-breadcrumb-item v-for="(item) in levelList" :key="item.path">
-      <router-link :to="item.redirect||item.path" class="bread-title">{{item.meta.title}}</router-link>
+      <router-link :to="item.path === '/index' ? '/index/home' : item.path">{{item.meta.title}}</router-link>
     </el-breadcrumb-item>
   </el-breadcrumb>
   <!-- 面包屑 End -->
