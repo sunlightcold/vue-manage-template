@@ -1,10 +1,4 @@
 <template>
-  <!-- 面包屑 -->
-  <!-- <el-breadcrumb class="app-breadcrumb" separator-class="el-icon-arrow-right">
-    <el-breadcrumb-item v-for="(item) in levelList" :key="item.path">
-    </el-breadcrumb-item>
-  </el-breadcrumb>-->
-  <!-- 面包屑 End -->
   <div class="float-breadcrumb">
     <el-tag
       v-for="tag in tags"

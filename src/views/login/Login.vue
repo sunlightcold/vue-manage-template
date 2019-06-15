@@ -51,7 +51,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push('/index')
+          this.$router.push('/index/home')
           this.$message({
             showClose: true,
             message: '登录成功',

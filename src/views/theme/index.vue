@@ -119,7 +119,7 @@
               to="/index/table"
               tag="div"
             >
-              <i class="el-icon-setting"></i>
+              <i class="el-icon-s-data"></i>
               <span>Table</span>
             </router-link>
           </el-menu-item>
