@@ -1,5 +1,40 @@
 <template>
   <div class="table">
+    <el-form
+      :inline="true"
+      :model="formInline"
+      class="demo-form-inline"
+    >
+      <el-form-item>
+        <el-input
+          v-model="formInline.user"
+          placeholder="姓名 "
+          clearable
+        ></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-select
+          v-model="formInline.region"
+          placeholder="标签"
+          clearable
+        >
+          <el-option
+            label="家"
+            value="home"
+          ></el-option>
+          <el-option
+            label="公司"
+            value="company"
+          ></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item>
+        <el-button
+          type="primary"
+          @click="onSubmit"
+        >查询</el-button>
+      </el-form-item>
+    </el-form>
     <el-table
       :data="tableData"
       border
@@ -118,7 +153,11 @@ export default {
         name: '王小虎',
         address: '上海市普陀区金沙江路 1518 弄',
         tag: '公司'
-      }]
+      }],
+      formInline: {
+        user: '',
+        region: ''
+      }
     }
   },
   methods: {
@@ -133,12 +172,18 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
+    },
+    onSubmit() {
+      console.log('submit!');
     }
   }
 }
 </script>
 
 style <style lang="stylus" scoped>
+.el-form {
+  margin-top 20px  
+}
 .pagination {
   margin-top 20px
 }
